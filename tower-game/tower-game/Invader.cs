@@ -16,7 +16,7 @@ namespace tower_game
         public int Health { get; private set; } = 2;
 
         //True if invader has reached end of path
-        public bool HasScored { get { return _pathStep >= _pathStep.Length; } }
+        public bool HasScored { get { return _pathStep >= _path.Length; } }
 
         public bool IsNeutralized => Health <= 0;
 
