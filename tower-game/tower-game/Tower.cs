@@ -18,7 +18,7 @@ namespace tower_game
 
         public bool IsSuccessfulShot()
         {
-            return _random.NextDouble() < _accuracy;
+            return _random.NextDouble() < Accuracy;
         }
 
         public Tower(MapLocation location)
@@ -30,11 +30,11 @@ namespace tower_game
         {
             foreach(Invader invader in invaders)
             {
-                if(invader.IsActive && _location.InRangeOf(invader.Location, _range))
+                if(invader.IsActive && _location.InRangeOf(invader.Location, Range))
                 {
                     if(IsSuccessfulShot())
                     {
-                        invader.DecreaseHealth(_power);
+                        invader.DecreaseHealth(Power);
                         
                         if(invader.IsNeutralized)
                         {
