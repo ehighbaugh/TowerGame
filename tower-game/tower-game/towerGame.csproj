@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FastInvader.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Exceptions.cs" />
     <Compile Include="MapLocation.cs" />
@@ -49,6 +50,8 @@
     <Compile Include="Map.cs" />
     <Compile Include="Path.cs" />
     <Compile Include="Point.cs" />
+    <Compile Include="ShieldedInvader.cs" />
+    <Compile Include="StrongInvader.cs" />
     <Compile Include="Tower.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -8,9 +8,9 @@ namespace tower_game
 {
     class Tower
     {
-        private const int _range = 1;
-        private const int _power = 1;
-        private const double _accuracy = .75;
+        protected virtual int Range { get; } = 1;
+        protected virtual int Power { get; } = 1;
+        protected virtual double Accuracy { get; } = .75;
 
         private static readonly Random _random = new Random();
 
@@ -35,7 +35,7 @@ namespace tower_game
                     if(IsSuccessfulShot())
                     {
                         invader.DecreaseHealth(_power);
-                        Console.WriteLine("Shot at and hit invader!");
+                        
                         if(invader.IsNeutralized)
                         {
                             Console.WriteLine("Killed invader");

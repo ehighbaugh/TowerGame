@@ -11,9 +11,11 @@ namespace tower_game
         private readonly Path _path;
         private int _pathStep = 0;
 
+        protected virtual int StepSize { get { return 1; } }
+
         public MapLocation Location => _path.GetLocationAt(_pathStep);
 
-        public int Health { get; private set; } = 2;
+        public virtual int Health { get; protected set; } = 2;
 
         //True if invader has reached end of path
         public bool HasScored { get { return _pathStep >= _path.Length; } }
@@ -27,11 +29,12 @@ namespace tower_game
             _path = path;
         }
 
-        public void Move() => _pathStep += 1;
+        public void Move() => _pathStep += StepSize;
 
-        public void DecreaseHealth(int factor)
+        public virtual void DecreaseHealth(int factor)
         {
             Health -= factor;
+            Console.WriteLine("Shot at and hit invader!");
         }
 
     }
