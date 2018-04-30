@@ -8,7 +8,7 @@ namespace tower_game
 {
     class StrongInvader : Invader
     {
-        public override int Health { get; protected set; } = 2;
+        public override int Health { get; protected set; } = 5;
 
         public StrongInvader(Path path) : base(path)
         {

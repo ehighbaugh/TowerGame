@@ -27,12 +27,19 @@ namespace tower_game
                     }
                 );
 
+                MapLocation location = new MapLocation(0, 2, map);
+
+                if(path.IsOnPath(location))
+                {
+                    Console.WriteLine(location + "is on the path!");
+                }
+
                 Invader[] invaders =
                 {
                     new ShieldedInvader(path),
                     new FastInvader(path),
                     new StrongInvader(path),
-                    new Invader(path),
+                    new BasicInvader(path),
                 };
 
                 Tower[] towers =

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tower_game
 {
-    class Invader
+    abstract class Invader : IInvader
     {
         private readonly Path _path;
         private int _pathStep = 0;
@@ -15,7 +15,7 @@ namespace tower_game
 
         public MapLocation Location => _path.GetLocationAt(_pathStep);
 
-        public virtual int Health { get; protected set; } = 2;
+        public abstract int Health { get; protected set; }
 
         //True if invader has reached end of path
         public bool HasScored { get { return _pathStep >= _path.Length; } }

@@ -8,11 +8,11 @@ namespace tower_game
 {
     class Level
     {
-        private readonly Invader[] _invaders;
+        private readonly IInvader[] _invaders;
 
         public Tower[] Towers { get; set; }
 
-        public Level(Invader[] invaders)
+        public Level(IInvader[] invaders)
         {
             _invaders = invaders;
         }
@@ -33,7 +33,7 @@ namespace tower_game
 
                 //Count and move active invaders
                 remainingInvaders = 0;
-                foreach (Invader invader in _invaders)
+                foreach (IInvader invader in _invaders)
                 {
                     if (invader.IsActive)
                     {

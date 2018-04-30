@@ -26,9 +26,9 @@ namespace tower_game
             _location = location;
         }
 
-        public void FireOnIvaders(Invader[] invaders)
+        public void FireOnIvaders(IInvader[] invaders)
         {
-            foreach(Invader invader in invaders)
+            foreach(IInvader invader in invaders)
             {
                 if(invader.IsActive && _location.InRangeOf(invader.Location, Range))
                 {
@@ -38,7 +38,7 @@ namespace tower_game
                         
                         if(invader.IsNeutralized)
                         {
-                            Console.WriteLine("Killed invader");
+                            Console.WriteLine("Killed invader at " + invader.Location + "!");
                         }
                     }
                     else
