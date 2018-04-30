@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace tower_game
 {
-    class StrongInvader : Invader
+    static class Random
     {
-        public override int Health { get; protected set; } = 3;
+        private static System.Random _random = new System.Random();
 
-        public StrongInvader(Path path) : base(path)
+        public static double NextDouble()
         {
-
+            return _random.NextDouble();
         }
     }
 }
